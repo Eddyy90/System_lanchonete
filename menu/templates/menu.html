@@ -1,0 +1,21 @@
+{% load static %}
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'menu/style.css' %}">
+</head>
+
+<div class="menu-container">
+  <h1 class="menu-title">Itens de menu</h1>
+  <ul class="items">
+    {% for item in items %}
+      <li class="menu-item">
+        <div class="menu-item-header">
+          <h2 class="menu-item-name">{{ item.name }}</h2>
+          <p class="menu-item-price">Preço: {{ item.price }}</p>
+        </div>
+        <p class="menu-item-description">{{ item.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
