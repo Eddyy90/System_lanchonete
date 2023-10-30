@@ -18,11 +18,14 @@
       </li>
     {% endfor %}
   </ul>
-  <button onclick="goBack()">Voltar</button>
-</div>
+  <a href="javascript:void(0);" onclick="voltarNavegacao();"/a>
+    <button class="botton-voltar">Voltar</button>
+  </a>
 
-<script>
-  function goBack() {
-    window.history.back();
-  }
-</script>
+  <script>
+    function voltarNavegacao() {
+        window.history.back();
+    }
+    </script>
+    
+  
