@@ -6,6 +6,7 @@
 
 <div class="menu-container">
   <h1 class="menu-title">Itens de menu</h1>
+  <a href="" class="btn-Voltar">Voltar</a>
 
   <ul class="items">
     {% for item in items %}
@@ -18,14 +19,5 @@
       </li>
     {% endfor %}
   </ul>
-  <a href="javascript:void(0);" onclick="voltarNavegacao();"/a>
-    <button class="botton-voltar">Voltar</button>
-  </a>
-
-  <script>
-    function voltarNavegacao() {
-        window.history.back();
-    }
-    </script>
     
   

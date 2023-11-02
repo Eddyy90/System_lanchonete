@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import MenuItem
+from .models import MenuItem, MenuBebidas
 
 def menu(request):
     items = MenuItem.objects.all()
@@ -7,3 +7,8 @@ def menu(request):
 
 def main(request):
 	return render(request, 'main.html')
+
+def menu_bebidas(request):
+    Bebidas = MenuBebidas.objects.all()
+    return render(request, 'bebidas.html', {'Bebidas': Bebidas})
+

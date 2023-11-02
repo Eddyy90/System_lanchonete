@@ -10,6 +10,17 @@
   margin-bottom: 40px;
 }
 
+.btn-Voltar{    
+  background-color: #acabab;
+  border: 2px solid #ddd;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
 .menu-items {
   list-style: none;
   padding: 0;

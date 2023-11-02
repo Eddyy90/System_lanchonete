@@ -2,16 +2,16 @@
 FROM python:3.9
 
 # Defina o diretório de trabalho dentro do contêiner
-WORKDIR /menu
+WORKDIR /system_lanchonete
 
 # Copie o arquivo requirements.txt para o contêiner
-COPY requirements.txt /menu/
+COPY requirements.txt /system_lanchonete/
 
 # Instale as dependências do projeto
 RUN pip install -r requirements.txt
 
 # Copie todo o projeto para o contêiner
-COPY . /menu/
+COPY . /system_lanchonete/
 
 # Configure as variáveis de ambiente (ajuste conforme necessário)
 ENV DJANGO_SETTINGS_MODULE=restaurant_system.settings

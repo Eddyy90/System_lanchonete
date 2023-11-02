@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bebidas</title>
+</head>
+<body>
+    <h1>Faça sua escolha</h1>
+    <ul>
+        {% for Bebidas in Bebidas %}
+            <li>{{ bebida.name }} - R$ {{ bebida.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
