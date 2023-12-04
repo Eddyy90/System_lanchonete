@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html>
+{% load static %}
+
 <head>
-    <title>Bebidas</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'menu/bebidas.css' %}">
 </head>
-<body>
-    <h1>Faça sua escolha</h1>
-    <ul>
-        {% for Bebidas in Bebidas %}
-            <li>{{ bebida.name }} - R$ {{ bebida.price }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+
+<div class="menu-container">
+  <h1 class="menu-title">Bebidas</h1>
+  <a href="javascript:void(0)" class="btn btn-primary">Voltar</a>
+  <ul class="Bebidas">
+    {% for Bebidas in Bebidas %}
+      <li class="menu-Bebidas">
+        <div class="menu-Bebidas-header">
+          <h2 class="menu-Bebidas-name">{{ Bebidas.name }}</h2>
+          <p class="menu-Bebidas-price">Preço: {{ Bebidas.price }}</p>
+        </div>
+        <p class="menu-Bebidas-description">{{ Bebidas.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>

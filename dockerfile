@@ -1,28 +1,19 @@
-# Use uma imagem base do Python 3.x
+# Use a imagem oficial do Python como base
 FROM python:3.9
 
-# Defina o diretório de trabalho dentro do contêiner
-WORKDIR /system_lanchonete
+# Configurar o ambiente de trabalho
+WORKDIR /app
 
-# Copie o arquivo requirements.txt para o contêiner
-COPY requirements.txt /system_lanchonete/
+# Copiar os arquivos necessários para o diretório de trabalho
+COPY . /app/
 
-# Instale as dependências do projeto
-RUN pip install -r requirements.txt
+# Instalar as dependências do projeto
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copie todo o projeto para o contêiner
-COPY . /system_lanchonete/
+# Aguardar a disponibilidade do serviço do banco de dados
+# (Você pode ajustar o tempo de espera conforme necessário)
+# CMD ["./docker-entrypoint.sh"]
 
-# Configure as variáveis de ambiente (ajuste conforme necessário)
-ENV DJANGO_SETTINGS_MODULE=restaurant_system.settings
-ENV DEBUG=False
-
-# Execute as migrações do Django
-RUN python manage.py migrate
-
-
-# Exponha a porta em que o Django será executado (padrão: 8000)
-EXPOSE 8000
-
-# Comando para iniciar o servidor Django
+# Executar as migrações e iniciar a aplicação
+CMD ["python", "manage.py", "migrate"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -1,0 +1,53 @@
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .menu-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .btn-pill{    
+    background-color: #acabab;
+    border: 2px solid #ddd;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-Bebidas {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-Bebidas {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .menu-Bebidas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-Bebidas-name {
+    font-size: 24px;
+  }
+  
+  .menu-Bebidas-price {
+    font-size: 18px;
+  }
+  
+  .menu-Bebidas-description {
+    font-size: 18px;
+  }

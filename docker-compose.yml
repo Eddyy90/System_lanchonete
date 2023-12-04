@@ -1,15 +1,27 @@
 version: '3'
+
 services:
   web:
-    image: python:3.10
+    build:
+      context: .
+      dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./menu:/app/menu
+      - .:/app
     ports:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      - DJANGO_SETTINGS_MODULE=restaurant_system.settings
+
   db:
-    image: sqlite
-    volumes:
-      - ./db.sqlite3:/app/db.sqlite3
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: db_geral
+      POSTGRES_USER: adm1
+      POSTGRES_PASSWORD: adm1adm
+
+  # Adicione outros serviços conforme necessário
+
+# Outras configurações podem ser necessárias com base nas necessidades do seu projeto
