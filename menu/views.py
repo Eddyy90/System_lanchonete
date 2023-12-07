@@ -9,6 +9,5 @@ def main(request):
 	return render(request, 'main.html')
 
 def menu_bebidas(request):
-    Bebidas = MenuBebidas.objects.all()
-    return render(request, 'bebidas.html', {'Bebidas': Bebidas})
-
+    bebidas = MenuBebidas.objects.all()
+    return render(request, 'bebidas.html', {'bebidas': bebidas})

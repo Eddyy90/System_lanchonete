@@ -1,20 +1,65 @@
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'menu/bebidas.css' %}">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bebidas</title>
 
-<div class="menu-container">
-  <h1 class="menu-title">Bebidas</h1>
-  <a href="javascript:void(0)" class="btn btn-primary">Voltar</a>
-  <ul class="Bebidas">
-    {% for Bebidas in Bebidas %}
-      <li class="menu-Bebidas">
-        <div class="menu-Bebidas-header">
-          <h2 class="menu-Bebidas-name">{{ Bebidas.name }}</h2>
-          <p class="menu-Bebidas-price">Preço: {{ Bebidas.price }}</p>
+    <!-- Adicione os arquivos CSS do Bootstrap -->
+    <link href="{% static 'Temas/HTML/sash/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ROW OPEN -->
+    <div class="row">
+        <!-- COL 1 OPEN -->
+        <div class="col-sm-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Refrigerantes</h3>
+                </div>
+                <div class="card-body">
+                    <div class="">
+                        <ul class="list-group">
+                            {% for bebida in bebidas %}
+                                <li class="list-group-item">
+                                    {{ bebida.name }} - Preço: R$ {{ bebida.price }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="menu-Bebidas-description">{{ Bebidas.description }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+        <!-- COL 1 END -->
+
+        <!-- COL 2 OPEN -->
+        <div class="col-sm-12 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Sucos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="">
+                        <ul class="list-group">
+                            {% for bebida in bebidas %}
+                                <li class="list-group-item">
+                                    {{ bebida.name }} - Preço: R$ {{ bebida.price }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COL 2 END -->
+    </div>
+    <!-- ROW END -->
+
+    <!-- Adicione os arquivos JS do Bootstrap (ao final do corpo para melhor desempenho) -->
+    <script src="{% static 'Temas/HTML/sash/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Temas/HTML/sash/assets/plugins/bootstrap/js/popper.min.js' %}"></script>
+</body>
+</html>
